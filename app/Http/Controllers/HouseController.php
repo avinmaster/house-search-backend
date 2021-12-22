@@ -34,6 +34,26 @@ class HouseController extends Controller
             function ($query, $maxPrice) {
                 return $query->where('price', "<=", $maxPrice);
             }
+        )->when(
+            $request->bedrooms,
+            function ($query, $bedrooms) {
+                return $query->where('bedrooms', $bedrooms);
+            }
+        )->when(
+            $request->bathrooms,
+            function ($query, $bathrooms) {
+                return $query->where('bathrooms', $bathrooms);
+            }
+        )->when(
+            $request->storeys,
+            function ($query, $storeys) {
+                return $query->where('storeys', $storeys);
+            }
+        )->when(
+            $request->garages,
+            function ($query, $garages) {
+                return $query->where('garages', $garages);
+            }
         )->when( // Sorting
             $request->sortByPrice && in_array($request->sortByPrice, ['m', 'l']),
             function ($query) use ($request) {
