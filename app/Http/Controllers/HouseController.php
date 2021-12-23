@@ -18,7 +18,7 @@ class HouseController extends Controller
      */
     public function search(Request $request): array
     {
-        // checking for the presence of a filter or sorting type in the request and if available, using a filter or sorting 
+        // checking for the presence of a filter or sorting type in the request and if available, using a filter or sorting
         $houses = House::when(
             $request->name,
             function ($query, $name) {
@@ -62,7 +62,7 @@ class HouseController extends Controller
             function ($query) {
                 return $query->orderByDesc('id');
             }
-        )->paginate(15);
+        )->paginate(5);
 
         // Return the search view with the results compacted
         return compact('houses');

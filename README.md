@@ -13,3 +13,9 @@ composer i
 And create a new .env file (use .env.example for that) and fill up it (you know what to do).
 
 Database i've used: **MySQL**
+
+### About functionality
+- Searching by name (not only whole word)
+- Other filters
+- Pagination
+- Sorting
